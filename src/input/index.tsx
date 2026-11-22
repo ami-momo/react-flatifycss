@@ -11,22 +11,36 @@ export interface InputProps
       React.InputHTMLAttributes<HTMLInputElement>,
       'size' | 'color' | 'onChange' | 'onBlur' | 'onFocus'
     > {
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Border color of the `valid` state. */
   colorValid?: string;
+  /** Border color of the `warning` state. */
   colorWarning?: string;
+  /** Border color of the `invalid` state. */
   colorInvalid?: string;
+  /** Puts the label inside the input. */
   hasFloatingLabel?: boolean;
+  /** Label text. */
   label?: string;
+  /** Called with the value and the event. */
   onChange?: (
     value: string,
     event: React.ChangeEvent<HTMLInputElement>
   ) => void;
+  /** Called with the value and the event. */
   onBlur?: (value: string, event: React.FocusEvent<HTMLInputElement>) => void;
+  /** Called with the value and the event. */
   onFocus?: (value: string, event: React.FocusEvent<HTMLInputElement>) => void;
+  /** Validation state. */
   state?: 'default' | 'valid' | 'warning' | 'invalid';
+  /** Shows the state icon next to the input. */
   stateIcon?: boolean;
+  /** Shows a button to show or hide the password. */
   togglePassword?: boolean;
+  /** Accessible label of the password button. */
   togglePasswordLabel?: string;
+  /** Class names of the wrapper, `className` goes to the input. */
   wrapperClassName?: string;
 }
 
@@ -69,13 +83,14 @@ export const Input = forwardRef(
       togglePasswordLabel,
       type,
       value,
+      defaultValue,
       wrapperClassName,
       ...rest
     } = props;
 
     const [InputValue, setInputValue] = useState<
       string | ReadonlyArray<string> | number | undefined
-    >('');
+    >(defaultValue ?? '');
     const [isFocused, setIsFocused] = useState<boolean>(false);
     const [isPassword, setIsPassword] = useState<boolean>(true);
 

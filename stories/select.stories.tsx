@@ -1,16 +1,12 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { Select } from '../src';
-import SelectPage from './select.mdx';
 
 const meta: Meta = {
   title: 'Forms/Select',
   component: Select,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: SelectPage,
-    },
   },
 };
 
@@ -68,14 +64,14 @@ Grouped.args = {
 };
 Controlled.args = {
   label: 'Controlled Select (should set the value manually):',
-  value: 'bikes',
+  value: 'cars',
   onChange: value => alert('Selected option is => ' + value),
 };
 
 Multiple.args = {
   label: 'Choose as much as you can:',
   multiple: true,
-  defaultValue: ['bikes', 'trains'],
+  defaultValue: ['cars', 'trains'],
   onChange: value => {
     if (Array.isArray(value) && value.length > 1) {
       alert('Selected options are => ' + value);

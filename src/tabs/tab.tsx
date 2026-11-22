@@ -8,7 +8,9 @@ import { generalClasses } from '../classes';
 export interface TabProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Content of the component. */
   children: React.ReactNode;
+  /** Internal, set by `<TabList />`. */
   orderIndex?: number;
 }
 

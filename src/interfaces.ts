@@ -53,13 +53,22 @@ export type Sizes =
   | '5x';
 
 export interface FlatifyGeneralProps {
+  /** Changes the rendered HTML tag or component, like `as="a"`. */
   as?: ElementType;
+  /** Extra class names. */
   className?: string;
+  /** Text color, adds a `.color-{color}` class. */
   color?: Colors;
+  /** Test id for your tests. */
   'data-testid'?: string;
+  /** HTML id. */
   id?: string;
+  /** Border radius, adds an `.edge-{roundness}` class. */
   roundness?: Roundness;
+  /** Size of the component, adds a `.size-{size}` class. */
   size?: Sizes;
+  /** Your own CSS, passed to styled-components. */
   sx?: string;
+  /** Background, text and border colors, adds a `.style-{theme}` class. */
   theme?: Colors;
 }

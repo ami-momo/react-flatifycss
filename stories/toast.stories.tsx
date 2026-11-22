@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { Button, Toast, ToastIcon, ToastsWrapper } from '../src';
-import ToastPage from './toast.mdx';
 
 const meta: Meta = {
   title: 'Components/Toast',
   component: Toast,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: ToastPage,
-    },
   },
 };
 

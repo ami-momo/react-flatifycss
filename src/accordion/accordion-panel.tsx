@@ -11,6 +11,10 @@ import { FlatifyGeneralProps } from '../interfaces';
 export interface AccordionPanelProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /**
+   * Height animation duration in milliseconds.
+   * @default 200
+   */
   duration?: number;
 }
 

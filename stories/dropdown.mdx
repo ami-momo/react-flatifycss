@@ -1,106 +1,116 @@
-import { Canvas, Story } from '@storybook/addon-docs';
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as DropdownStories from './dropdown.stories';
+import { DropdownButton, DropdownBody } from '../src';
+
+<Meta of={DropdownStories} />
 
 # Dropdown
 
-<p class="component-doc-intro">
-  Dropdowns typically provide a list of items to interact with, however, it is
-  possible to have a complex UI inside dropdowns. With dropdown component you
-  can even create popover and tooltips.
-</p>
-<div class="funky-spacer" />
+<p className="component-doc-intro">Dropdowns typically provide a list of items to interact with, however, it is possible to have a complex UI inside dropdowns. With dropdown component you can even create popover and tooltips.</p>
+<div className="funky-spacer" />
 
 ## Default
 
-Note: ALWAYS pass the `id` prop to dropdowns, because it uses this ID internally for accessibility reasons.
+Note: ALWAYS pass the `id` prop to dropdowns, because it uses this ID internally for accessibility reasons. Each dropdown on the page needs its own ID.
 
-<Canvas>
-  <Story id="components-dropdown--default" />
-</Canvas>
+<Canvas of={DropdownStories.Default} />
 
 ## Menu items
 
 To have a dropdown which contains menu items, add the `isMenu={true}` prop to `<DropdownBody />`.  
 Now you can add your menu items inside that component like `<li className="menu-item heading">My Account</li>`.
 
-<Canvas>
-  <Story id="components-dropdown--menu-items" />
-</Canvas>
+<Canvas of={DropdownStories.MenuItems} />
 
 ## Placement
 
 It is possible to change the direction where the dropdown is displayed, use the `placement` with `<Dropdown />` component.  
-Possible values are: `top`, `bottom`, `left`, `right`.
+Possible values are: `top`, `bottom` (default), `left`, `right`.
 
-<Canvas>
-  <Story id="components-dropdown--placement" />
-</Canvas>
+<Canvas of={DropdownStories.Placement} />
 
 ## Hoverable
 
 If the `isHoverable={true}` prop is set for `<Dropdown />` component, when the user hovers the dropdown button, the dropdown will be displayed (just like a tooltip).
 
-<Canvas>
-  <Story id="components-dropdown--hoverable" />
-</Canvas>
+<Canvas of={DropdownStories.Hoverable} />
 
 ### Hover show/hide delay
 
 Changing the amount of time that should be passed to display or hide the dropdown is possible with these two props: `hoverShowDelay` (default: 200), `hoverHideDelay` (default: 400), you can set them to the `<Dropdown />` component.
 
-<div class="funky-spacer" />
+<div className="funky-spacer" />
 
 ## Auto close
 
 The dropdown component gives you the ability to limit when it should be closed, for example when the user clicks outside, inside, both or neither.  
 For this purpose, use the `autoClose` for the `<Dropdown />` component.  
-Possible values are: `true`, `false`, `outside`, `inside`.
+| `autoClose` | Closes when you click |
+| --- | --- |
+| `true` | inside or outside the dropdown |
+| `outside` | outside the dropdown |
+| `inside` | inside the dropdown |
+| `false` | never, close it yourself |
+| not set | never by clicking |
 
-<Canvas>
-  <Story id="components-dropdown--auto-close" />
-</Canvas>
+The <kbd>Escape</kbd> key closes the dropdown in every case, except when `autoClose` is `false`.
+
+<Canvas of={DropdownStories.AutoClose} />
 
 ## Offset
 
-By default, the dropdown is positioned based on the button, however it is possible to tweak it with `offsetX` and `offsetY` props.
+By default, the dropdown is positioned based on the button, however it is possible to tweak it with `offsetX` (default: 0) and `offsetY` (default: 20) props, both in pixels.
 
-<Canvas>
-  <Story id="components-dropdown--offset" />
-</Canvas>
+<Canvas of={DropdownStories.Offset} />
 
 ## Tooltip
 
 Dropdown's hoverability, makes it possible to create tooltips, they also will be displayed on focus and support the global <kbd>ESC</kbd> key.
 
-<Canvas>
-  <Story id="components-dropdown--tooltip" />
-</Canvas>
+<Canvas of={DropdownStories.Tooltip} />
 
 ## Dropdown button
 
 ### Reset style
 
-Set the `buttonStyle={false}` to `<DropdownButton />`, so the button will not have its style anymore and will be like texts.
+Set the `buttonStyle={false}` to `<DropdownButton />`, so the button will not have its style anymore and will be like texts. The tooltip example above uses it.
 
-<div class="funky-spacer-sm" />
+```jsx
+<DropdownButton buttonStyle={false}>open it!</DropdownButton>
+```
 
-### Hide arrow
+### Arrow
 
-To hide the dropdown button component arrow, set the `hasArrow={false}` to `<DropdownButton />`.
+The dropdown button has no arrow by default. To show the arrow next to the text, add the `hasArrow` prop to `<DropdownButton />`, like the menu examples above. The arrow flips when the dropdown is open.
 
-<div class="funky-spacer-sm" />
+```jsx
+<DropdownButton hasArrow>Open Menu</DropdownButton>
+```
 
 ### Split Button
 
 With `<ButtonGroup />` component, you can create this common UI.
 
-<Canvas>
-  <Story id="components-dropdown--split-button" />
-</Canvas>
+<Canvas of={DropdownStories.SplitButton} />
 
 ## Customization
 
 In this example, the custom show and hide animation is set with the `showAnimation` and `hideAnimation` props. The animations are defined with the `sx` parameter (styled components).
 
-<Canvas>
-  <Story id="components-dropdown--customized" />
-</Canvas>
+<Canvas of={DropdownStories.Customized} />
+
+## Props
+
+### Dropdown
+
+<ArgTypes of={DropdownStories} />
+
+### DropdownButton
+
+Accepts every [Button](?path=/docs/buttons-button--docs) prop, plus these:
+
+<ArgTypes of={DropdownButton} />
+
+### DropdownBody
+
+<ArgTypes of={DropdownBody} />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { Button, Hamburger } from '../src';
 
 const meta: Meta = {
@@ -28,7 +28,13 @@ const Template: Story = args => {
 const ButtonTemplate: Story = args => {
   const [active, setActive] = useState(false);
   return (
-    <Button size="xs" outline onClick={() => setActive(old => !old)}>
+    <Button
+      size="xs"
+      outline
+      aria-label="Menu"
+      aria-expanded={active}
+      onClick={() => setActive(old => !old)}
+    >
       <Hamburger {...args} active={active} color="dark-light" />
     </Button>
   );

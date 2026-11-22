@@ -7,8 +7,11 @@ import { generalClasses } from '../classes';
 export interface AlertCloseButtonProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLButtonElement>, 'color'> {
+  /** Optional content instead of the close icon. */
   children?: React.ReactNode;
+  /** Puts the button over the content, shown on hover and focus. */
   floating?: boolean;
+  /** Accessible label, read by screen readers. */
   label: string;
 }
 

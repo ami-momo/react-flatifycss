@@ -1,0 +1,36 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as FireworksStories from './fireworks.stories';
+
+<Meta of={FireworksStories} />
+
+# Fireworks
+
+<p className="component-doc-intro">For the moments worth celebrating, like a finished form or a new record.</p>
+<div className="funky-spacer" />
+
+## Default
+
+<Canvas of={FireworksStories.Default} />
+
+## Simple
+
+<Canvas of={FireworksStories.Simple} />
+
+## Timing
+
+`duration` and `delay` are in milliseconds, and `repeatCount` sets how many times it plays. By default it never stops.
+
+<Canvas of={FireworksStories.Duration} />
+<Canvas of={FireworksStories.RepeatCount} />
+<Canvas of={FireworksStories.Delayed} />
+
+## Colors
+
+Add the `anim-hue` class for changing colors, or set your own with the FlatifyCSS variables in `sx`.
+
+<Canvas of={FireworksStories.DynamicColor} />
+<Canvas of={FireworksStories.Customized} />
+
+## Props
+
+<ArgTypes of={FireworksStories} />

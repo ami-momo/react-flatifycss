@@ -1,16 +1,12 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { Element } from '../src';
-import ElementPage from './element.mdx';
 
 const meta: Meta = {
   title: 'Components/Element',
   component: Element,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: ElementPage,
-    },
   },
 };
 

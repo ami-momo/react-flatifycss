@@ -7,7 +7,9 @@ import { generalClasses } from '../classes';
 export interface AddButtonProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Shows a minus instead of a plus. */
   active?: boolean;
+  /** Accessible label, read by screen readers. */
   label: string;
 }
 

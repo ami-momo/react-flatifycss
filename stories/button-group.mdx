@@ -1,0 +1,37 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as ButtonGroupStories from './button-group.stories';
+
+<Meta of={ButtonGroupStories} />
+
+# Button group
+
+<p className="component-doc-intro">Put related buttons next to each other and they stick together, nice for toolbars and filters.</p>
+<div className="funky-spacer" />
+
+## Default
+
+Wrap your `<Button />`s with `<ButtonGroup />`.
+
+<Canvas of={ButtonGroupStories.Default} />
+
+## Vertical
+
+Add the `vertical` prop to stack them.
+
+<Canvas of={ButtonGroupStories.Vertical} />
+
+## Bordered
+
+The group does not change your buttons, so to have borders add `bordered` to each `<Button />`.
+
+<Canvas of={ButtonGroupStories.Bordered} />
+
+## Colorful
+
+Each button can have its own `theme`.
+
+<Canvas of={ButtonGroupStories.Colorful} />
+
+## Props
+
+<ArgTypes of={ButtonGroupStories} />

@@ -1,76 +1,65 @@
-import { Canvas, Story } from '@storybook/addon-docs';
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as TabsStories from './tabs.stories';
+import { TabList, TabPanels } from '../src';
+
+<Meta of={TabsStories} />
 
 # Tabs
 
-<p class="component-doc-intro">
-  With Tabs, we can have different layers of content in the same place and users
-  can choose which layer they want to see.
-</p>
-<div class="funky-spacer" />
+<p className="component-doc-intro">With Tabs, we can have different layers of content in the same place and users can choose which layer they want to see.</p>
+<div className="funky-spacer" />
 
 ## Default
 
-Created tabs by separating tabs and its content.  
+Create tabs by separating the tabs and their content.  
 For tabs, use `<TabList />` with `<Tab />`s inside.  
 For contents, use `<TabPanels />` with `<TabPanel />`s inside.
 
+<Canvas of={TabsStories.Default} />
+
 ### Default tab
 
-You can change the default tab to be displayed, set the `defaultIndex` to `<Tabs />` component.
+You can change the default tab to be displayed, set the `defaultIndex` to `<Tabs />` component. It starts from `0`, so here the second tab is open:
 
-<Canvas>
-  <Story id="components-tabs--default" />
-</Canvas>
+<Canvas of={TabsStories.DefaultTab} />
 
 ## Top line
 
 Tab line can be placed to top instead of bottom, set the `linePosition="top"` for `<TabList />` component.
 
-<Canvas>
-  <Story id="components-tabs--top-line" />
-</Canvas>
+<Canvas of={TabsStories.TopLine} />
 
 ## Centered
 
 Add the `centered` to `<TabList />`, so tabs will be center aligned.
 
-<Canvas>
-  <Story id="components-tabs--centered" />
-</Canvas>
+<Canvas of={TabsStories.Centered} />
 
 ## Bordered
 
 To have borders around the tabs component, add the `bordered` prop to `<Tabs />`.
 
-<Canvas>
-  <Story id="components-tabs--bordered" />
-</Canvas>
+<Canvas of={TabsStories.Bordered} />
 
 ## Scrollable
 
 By default, if tabs overflow, they go to the next line, but sometimes you might not need that behavior, so add the `scrollable={true}` to `<TabList />` and it will be scrolled horizontally if that's necessary.
 
-<Canvas>
-  <Story id="components-tabs--scrollable" />
-</Canvas>
+<Canvas of={TabsStories.Scrollable} />
 
 ## Animation
 
 Change the animation by setting the `animation` prop to `<TabPanels />` component, possible values are: `default`, `fade` and `none`.
 
-<Canvas>
-  <Story id="components-tabs--animation" />
-</Canvas>
+<Canvas of={TabsStories.Animation} />
 
 ### Custom animation
 
-It is possible to use your custom animation to show tabs, set the `showAnimation` to `<TabPanels />`, the expected value is a CSS animation like this: `tab-custom-show-anim ease 0.3s`.
+It is possible to use your custom animation to show tabs, set the `showAnimation` to `<TabPanels />`, the expected value is a CSS animation like this: `tab-custom-show-anim ease 0.3s`. The customized example below uses `flatify-dropdown-show 0.3s`.
 
 ## Customized
 
-<Canvas>
-  <Story id="components-tabs--customized" />
-</Canvas>
+<Canvas of={TabsStories.Customized} />
 
 ## Other features
 
@@ -84,3 +73,19 @@ Defaults to "auto".
 ### index
 
 Tab's state can be controlled by the owner. Make sure to include an `onChange` as well, or else the tabs will not be interactive.
+
+## Props
+
+### Tabs
+
+<ArgTypes of={TabsStories} />
+
+### TabList
+
+<ArgTypes of={TabList} />
+
+### TabPanels
+
+<ArgTypes of={TabPanels} />
+
+`<Tab />` and `<TabPanel />` accept the [common props](?path=/docs/documents-common-props--docs).

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { Figure } from '../src';
 
 const meta: Meta = {
@@ -44,7 +44,7 @@ CreditLink.args = {
 };
 
 CreditTheme.args = {
-  creditTheme: 'orange  -light',
+  creditTheme: 'orange-light',
   creditName: 'Picsum',
   creditLink: 'https://picsum.photos/',
 };

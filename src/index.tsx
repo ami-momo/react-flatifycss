@@ -32,3 +32,6 @@ export * from './modal';
 export * from './progress';
 export * from './tabs';
 export * from './toast';
+
+// shared types
+export * from './interfaces';

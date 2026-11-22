@@ -1,0 +1,34 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as QuoteStories from './quote.stories';
+
+<Meta of={QuoteStories} />
+
+# Quote
+
+<p className="component-doc-intro">For the words that deserve some space.</p>
+<div className="funky-spacer" />
+
+## Default
+
+Use the `cite` prop for the person or the source.
+
+<Canvas of={QuoteStories.Default} />
+
+## Large
+
+<Canvas of={QuoteStories.Large} />
+
+## Icon
+
+Add `hasIcon` for the quote marks, or pass your own SVG as a string with `icon`.
+
+<Canvas of={QuoteStories.Icon} />
+<Canvas of={QuoteStories.CustomIcon} />
+
+## Theme
+
+<Canvas of={QuoteStories.Theme} />
+
+## Props
+
+<ArgTypes of={QuoteStories} />

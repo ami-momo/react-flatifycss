@@ -1,16 +1,12 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import React from 'react';
 import { Badge, Tab, TabList, TabPanel, TabPanels, Tabs } from '../src';
-import TabsPage from './tabs.mdx';
 
 const meta: Meta = {
   title: 'Components/Tabs',
   component: Tabs,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: TabsPage,
-    },
   },
 };
 
@@ -211,12 +207,17 @@ const TemplateCustomized: Story = ({ showAnimation, ...rest }) => (
 );
 
 export const Default = Template.bind({});
+export const DefaultTab = Template.bind({});
 export const TopLine = Template.bind({});
 export const Centered = Template.bind({});
 export const Bordered = Template.bind({});
 export const Scrollable = TemplateScrollable.bind({});
 export const Animation = Template.bind({});
 export const Customized = TemplateCustomized.bind({});
+
+DefaultTab.args = {
+  defaultIndex: 1,
+};
 
 TopLine.args = {
   linePosition: 'top',

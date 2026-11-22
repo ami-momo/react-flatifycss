@@ -10,17 +10,26 @@ export interface CheckboxProps
       React.InputHTMLAttributes<HTMLInputElement>,
       'color' | 'onChange' | 'size'
     > {
+  /** Checked state, makes it controlled. Use `defaultChecked` for an uncontrolled one. */
   checked?: boolean;
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Border color of the `valid` state. */
   colorValid?: string;
+  /** Border color of the `warning` state. */
   colorWarning?: string;
+  /** Border color of the `invalid` state. */
   colorInvalid?: string;
+  /** Disables the element. */
   disabled?: boolean;
+  /** Label text, you can use `children` instead. */
   label?: string;
+  /** Called with the event and the new checked state. */
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
     checked: boolean
   ) => void;
+  /** Validation state. */
   state?: 'valid' | 'warning' | 'invalid';
 }
 

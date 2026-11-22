@@ -1,0 +1,31 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as ArrowButtonStories from './arrow-button.stories';
+
+<Meta of={ArrowButtonStories} />
+
+# Arrow button
+
+<p className="component-doc-intro">An arrow that points where you want, alone or inside a button.</p>
+<div className="funky-spacer" />
+
+## Default
+
+Just the arrow, set the `label` prop so screen readers know what it does.
+
+<Canvas of={ArrowButtonStories.Default} />
+
+## Button
+
+Add `isButton` to give it the button look.
+
+<Canvas of={ArrowButtonStories.Button} />
+
+## Directions
+
+The `direction` prop can be `top`, `bottom`, `left` or `right`. To turn it the other way around, use `isFlipped`.
+
+<Canvas of={ArrowButtonStories.Directions} />
+
+## Props
+
+<ArgTypes of={ArrowButtonStories} />

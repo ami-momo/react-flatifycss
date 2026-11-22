@@ -1,0 +1,37 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as LoadingStories from './loading.stories';
+
+<Meta of={LoadingStories} />
+
+# Loading
+
+<p className="component-doc-intro">Something is happening, tell users with a few dots or a spinner.</p>
+<div className="funky-spacer" />
+
+## Default
+
+<Canvas of={LoadingStories.Default} />
+
+## Spinner
+
+<Canvas of={LoadingStories.Spinner} />
+
+## Duration
+
+One animation round in milliseconds.
+
+<Canvas of={LoadingStories.Duration} />
+
+## Stopped
+
+<Canvas of={LoadingStories.Stopped} />
+
+## Customized
+
+Dots can have their own size with `dotWidth` and `dotHeight`, and `dotStartScale` sets how small they start, so instead of zoom out you can have zoom in.
+
+<Canvas of={LoadingStories.Customized} />
+
+## Props
+
+<ArgTypes of={LoadingStories} />

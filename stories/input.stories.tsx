@@ -1,16 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { Input } from '../src';
-import InputPage from './input.mdx';
 
 const meta: Meta = {
   title: 'Forms/Input',
   component: Input,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: InputPage,
-    },
   },
 };
 
@@ -98,8 +94,7 @@ export const Validation = ValidationTemplate.bind({});
 export const Uncontrolled = Template.bind({});
 
 Default.args = {
-  autoComplete: true,
-  autoFocus: true,
+  autoComplete: 'name',
   label: 'Your name',
   name: 'name',
   placeholder: 'Enter your name',
@@ -150,7 +145,8 @@ SearchBar.args = {
 };
 
 Uncontrolled.args = {
-  value: 'Change me with [value] attribute!',
+  ...Default.args,
+  defaultValue: 'Type something, I keep my own value',
 };
 
 Validation.args = {

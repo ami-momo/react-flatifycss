@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { Radio } from '../src';
-import RadioPage from './radio.mdx';
 
 const meta: Meta = {
   title: 'Forms/Radio',
   component: Radio,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: RadioPage,
-    },
   },
 };
 
@@ -18,12 +14,13 @@ export default meta;
 
 const Template: Story = args => {
   const [checked, setChecked] = useState(false);
+  const name = React.useId();
 
   return (
     <>
       <Radio
         {...args}
-        name="my-radio"
+        name={name}
         checked={checked}
         onChange={() => setChecked(!checked)}
       >
@@ -39,7 +36,7 @@ const Template: Story = args => {
 const UncontrolledTemplate: Story = args => (
   <Radio
     {...args}
-    name="my-radio"
+    name="radio-uncontrolled"
     defaultChecked={false}
     onChange={(e, checked) => alert('Radio value is: ' + checked)}
   >
@@ -49,11 +46,13 @@ const UncontrolledTemplate: Story = args => (
 
 const TemplateMultiple: Story = args => {
   const [checked, setChecked] = useState<any>('pizza');
+  const name = React.useId();
 
   return (
     <>
       <Radio
         {...args}
+        name={name}
         value="pizza"
         checked={checked == 'pizza'}
         onChange={(e, checked, value) => setChecked(value)}
@@ -62,6 +61,7 @@ const TemplateMultiple: Story = args => {
       </Radio>
       <Radio
         {...args}
+        name={name}
         value="sushi"
         checked={checked == 'sushi'}
         onChange={(e, checked, value) => setChecked(value)}
@@ -92,8 +92,7 @@ States.args = {
 };
 
 Customized.args = {
-  checked: false,
-  disabled: true,
+  state: 'invalid',
   colorValid: '#A0CECB',
   colorWarning: '#EC87C0',
   colorInvalid: '#8067B7',

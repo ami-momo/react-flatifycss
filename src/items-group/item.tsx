@@ -8,13 +8,21 @@ import ItemIcon from './item-icon';
 export interface ItemProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color' | 'onClick'> {
+  /** Active state. */
   active?: boolean;
+  /** Class names added when the item is active. */
   activeClassName?: string;
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Called with the item value. */
   onClick?: (value: string | number) => void;
+  /** Second line of the item. */
   subtitle?: string;
+  /** Icon of the item. */
   svg?: React.ReactNode;
+  /** Title of the item. */
   title: string;
+  /** Value of the item. */
   value: string | number;
 }
 

@@ -8,15 +8,25 @@ import { CSSTransition } from 'react-transition-group';
 export interface DropdownBodyProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Internal, set by `<Dropdown />`. */
   arrowInnerRef?: React.Ref<HTMLElement>;
+  /** Internal, set by `<Dropdown />`. */
   arrowStyles?: React.CSSProperties;
+  /** Internal, set by `<Dropdown />`. */
   buttonId?: string;
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Internal, set by `<Dropdown />`. */
   innerRef?: React.Ref<HTMLElement>;
+  /** Internal, set by `<Dropdown />`. */
   isOpen?: boolean;
+  /** Makes it a menu, put `<li className="menu-item">` items inside. */
   isMenu?: boolean;
+  /** Internal, set by `<Dropdown />`. */
   onBodyMouseEnter?: (event: React.MouseEvent<HTMLElement>) => void;
+  /** Internal, set by `<Dropdown />`. */
   onButtonMouseEnter?: (event: React.MouseEvent<HTMLElement>) => void;
+  /** Internal, used to find this component among children. Do not set it. */
   __TYPE?: 'DropdownBody';
 }
 
@@ -76,6 +86,5 @@ export default function DropdownBody(props: DropdownBodyProps) {
   );
 }
 
-DropdownBody.defaultProps = {
-  __TYPE: 'DropdownBody',
-};
+// <Dropdown /> uses this type name to find the body among its children.
+DropdownBody.__TYPE = 'DropdownBody';

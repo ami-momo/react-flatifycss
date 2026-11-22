@@ -9,17 +9,44 @@ import { generalClasses } from '../classes';
 export interface ToastProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Calls `onClose` after `duration`. */
   autoClose?: boolean;
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Shows a close button, it calls `onClose`. */
   closeButton?: boolean;
+  /**
+   * Accessible label of the close button.
+   * @default 'Close toast'
+   */
   closeButtonLabel?: string;
+  /**
+   * Time before `onClose` when `autoClose` is set, in milliseconds.
+   * @default 3000
+   */
   duration?: number;
+  /** Called by the close button and auto close. */
   onClose?: () => void;
+  /** Shows or hides the toast. */
   show?: boolean;
+  /** CSS `animation` value used to show it, like `my-show 0.3s ease`. */
   showAnimation?: string;
+  /** CSS `animation` value used to hide it. */
   hideAnimation?: string;
+  /**
+   * `status` is polite, `alert` interrupts screen readers.
+   * @default 'status'
+   */
   type?: 'status' | 'alert';
+  /**
+   * Horizontal position.
+   * @default 'center'
+   */
   x?: 'left' | 'right' | 'center';
+  /**
+   * Vertical position.
+   * @default 'bottom'
+   */
   y?: 'top' | 'bottom';
 }
 

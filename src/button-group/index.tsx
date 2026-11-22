@@ -7,7 +7,9 @@ import { generalClasses } from '../classes';
 export interface ButtonGroupProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Stacks the buttons vertically. */
   vertical?: boolean;
 }
 

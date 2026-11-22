@@ -3,3 +3,6 @@ import DropdownButton from './dropdown-button';
 import DropdownBody from './dropdown-body';
 
 export { Dropdown, DropdownButton, DropdownBody };
+export * from './dropdown';
+export * from './dropdown-button';
+export * from './dropdown-body';

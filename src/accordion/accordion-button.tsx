@@ -12,6 +12,7 @@ import { generalClasses } from '../classes';
 export interface AccordionButtonProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Shows a plus/minus icon. */
   hasIcon?: boolean;
 }
 

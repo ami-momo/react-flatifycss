@@ -7,12 +7,25 @@ import { generalClasses } from '../classes';
 export interface ProgressProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Adds borders. */
   bordered?: boolean;
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Speed of the processing animation, in milliseconds. */
   duration?: number;
+  /**
+   * Maximum value.
+   * @default 100
+   */
   max?: number;
+  /**
+   * Minimum value.
+   * @default 0
+   */
   min?: number;
+  /** Adds a moving light to show work in progress. */
   processing?: boolean;
+  /** Current value, required. */
   value: number;
 }
 

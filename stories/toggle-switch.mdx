@@ -1,12 +1,12 @@
-import { Canvas, Story } from '@storybook/addon-docs';
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as ToggleSwitchStories from './toggle-switch.stories';
+
+<Meta of={ToggleSwitchStories} />
 
 # Toggle switch
 
-<p class="component-doc-intro">
-  Toggle switch can be used instead of both checkbox and radio components, with
-  a playful and reactive design.
-</p>
-<div class="funky-spacer" />
+<p className="component-doc-intro">Toggle switch can be used instead of both checkbox and radio components, with a playful and reactive design.</p>
+<div className="funky-spacer" />
 
 ## Default
 
@@ -14,17 +14,13 @@ Specify the type of your toggle switch with `type` prop, it can be `checkbox` or
 You can control the toggle switch checked state with `checked` prop, also get the checked state on change with `onChange` event like so:  
 `onChange={(e, checked) => setChecked(checked)}`
 
-<Canvas>
-  <Story id="forms-toggle-switch--default" />
-</Canvas>
+<Canvas of={ToggleSwitchStories.Default} />
 
 ## Uncontrolled
 
 You can have an uncontrolled toggle switch as well, just do not use the `checked` prop and get the checked state with `onChange(event, isChecked)` argument.
 
-<Canvas>
-  <Story id="forms-toggle-switch--uncontrolled" />
-</Canvas>
+<Canvas of={ToggleSwitchStories.Uncontrolled} />
 
 ## Radios
 
@@ -32,28 +28,24 @@ You can have an uncontrolled toggle switch as well, just do not use the `checked
 You have radios in form of toggle switches, give every radio a specific value like `value="mind"` and `value="heart"`, then check if the value is equal to `checked={checked === 'mind'}` or `checked={checked === 'heart'}`. Also set the selected switch `onChange` with the third parameter, like so:  
  `onChange={(e, checked, value) => setChecked(value)}`
 
-<Canvas>
-  <Story id="forms-toggle-switch--radios" />
-</Canvas>
+<Canvas of={ToggleSwitchStories.Radios} />
 
 ## Uncontrolled radios
 
 To have uncontrolled toggle switches that are radios technically, just do not set the `checked` prop. It is possible to set the default toggle to be checked with `defaultChecked` prop.
 
-<Canvas>
-  <Story id="forms-toggle-switch--uncontrolled-radios" />
-</Canvas>
+<Canvas of={ToggleSwitchStories.UncontrolledRadios} />
 
 ## Disabled
 
-<Canvas>
-  <Story id="forms-toggle-switch--disabled" />
-</Canvas>
+<Canvas of={ToggleSwitchStories.Disabled} />
 
 ## After label
 
 If you set the `isAfterLabel={true}` for `<ToggleSwitch />` component, the toggle element will come after label.
 
-<Canvas>
-  <Story id="forms-toggle-switch--after-label" />
-</Canvas>
+<Canvas of={ToggleSwitchStories.AfterLabel} />
+
+## Props
+
+<ArgTypes of={ToggleSwitchStories} />

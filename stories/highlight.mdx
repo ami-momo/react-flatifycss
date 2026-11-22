@@ -1,0 +1,29 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as HighlightStories from './highlight.stories';
+
+<Meta of={HighlightStories} />
+
+# Highlight
+
+<p className="component-doc-intro">Highlight important words, like a marker pen on paper.</p>
+<div className="funky-spacer" />
+
+## Default
+
+<Canvas of={HighlightStories.Default} />
+
+## Inline
+
+The `inline` prop makes it sit nicely inside a line of text.
+
+<Canvas of={HighlightStories.Inline} />
+
+## Custom
+
+Any background works, even a gradient, set it with `sx`.
+
+<Canvas of={HighlightStories.Custom} />
+
+## Props
+
+<ArgTypes of={HighlightStories} />

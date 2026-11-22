@@ -5,15 +5,24 @@ import { generalClasses } from '../classes';
 import { Button, ButtonProps } from '../button';
 
 export interface DropdownButtonProps extends ButtonProps {
+  /** Class names of the arrow. */
   arrowClassName?: string;
+  /** `false` removes the button styles. */
   buttonStyle?: boolean;
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Shows an arrow next to the text. */
   hasArrow?: boolean;
+  /** Internal, set by `<Dropdown />`. */
   innerRef?: React.Ref<HTMLButtonElement>;
+  /** Internal, set by `<Dropdown />`. */
   isOpen?: boolean;
+  /** Internal, set by `<Dropdown />`. */
   onBodyMouseEnter?: (event: React.MouseEvent<HTMLElement>) => void;
+  /** Internal, set by `<Dropdown />`. */
   onButtonMouseEnter?: (event: React.MouseEvent<HTMLElement>) => void;
-  __TYPE: 'DropdownButton';
+  /** Internal, used to find this component among children. Do not set it. */
+  __TYPE?: 'DropdownButton';
 }
 
 const DropdownButtonWrapper = styled(Button)`
@@ -57,6 +66,5 @@ export default function DropdownButton(props: DropdownButtonProps) {
   );
 }
 
-DropdownButton.defaultProps = {
-  __TYPE: 'DropdownButton',
-};
+// <Dropdown /> uses this type name to find the button among its children.
+DropdownButton.__TYPE = 'DropdownButton';

@@ -1,0 +1,34 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as ProgressStories from './progress.stories';
+
+<Meta of={ProgressStories} />
+
+# Progress
+
+<p className="component-doc-intro">Show how far users are, in a course, an upload or a long form.</p>
+<div className="funky-spacer" />
+
+## Default
+
+`value` is required, `min` and `max` default to `0` and `100`.
+
+<Canvas of={ProgressStories.Default} />
+
+## Bordered
+
+<Canvas of={ProgressStories.Bordered} />
+
+## Processing
+
+Add `processing` for a moving light on the bar, when something is still going on. `duration` changes its speed in milliseconds.
+
+<Canvas of={ProgressStories.Processing} />
+<Canvas of={ProgressStories.Duration} />
+
+## Customized
+
+<Canvas of={ProgressStories.Customized} />
+
+## Props
+
+<ArgTypes of={ProgressStories} />

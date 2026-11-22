@@ -1,0 +1,44 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as FigureStories from './figure.stories';
+
+<Meta of={FigureStories} />
+
+# Figure
+
+<p className="component-doc-intro">Images with a caption and credit, the way a blog post likes them.</p>
+<div className="funky-spacer" />
+
+## Default
+
+`src` and `alt` are required, every other prop goes to the `<img>` element.
+
+<Canvas of={FigureStories.Default} />
+
+## Caption
+
+<Canvas of={FigureStories.Caption} />
+
+### Overlay caption
+
+Add `overlayCaption` to put the caption on the image.
+
+<Canvas of={FigureStories.OverlayCaption} />
+
+## Credit
+
+Give credit to the photographer with `creditName`, add `creditLink` to make it a link and `creditTheme` to change its color.
+
+<Canvas of={FigureStories.CreditName} />
+<Canvas of={FigureStories.CreditLink} />
+<Canvas of={FigureStories.CreditTheme} />
+
+## Centered and fill
+
+`centered` puts the figure in the middle of its parent, `fill` makes it as wide as its parent.
+
+<Canvas of={FigureStories.Centered} />
+<Canvas of={FigureStories.Fill} />
+
+## Props
+
+<ArgTypes of={FigureStories} />

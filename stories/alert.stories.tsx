@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { Alert, AlertCloseButton, AlertIcon } from '../src';
-import AlertPage from './alert.mdx';
 
 const meta: Meta = {
   title: 'Components/Alert',
   component: Alert,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: AlertPage,
-    },
   },
 };
 
@@ -73,7 +69,7 @@ Icon.args = {
 CustomAnimation.args = {
   floating: true,
   theme: 'accent-light',
-  animation: 'my-custom-animation 0.4s ease;',
+  animation: 'my-custom-animation 0.4s ease',
   sx: `
   @keyframes my-custom-animation {
     from {

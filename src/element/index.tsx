@@ -8,6 +8,7 @@ export interface ElementProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
   [key: string]: any;
+  /** Content of the component. */
   children?: React.ReactNode;
 }
 

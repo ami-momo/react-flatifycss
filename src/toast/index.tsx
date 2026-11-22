@@ -3,3 +3,5 @@ import ToastIcon from './toast-icon';
 import ToastsWrapper from './toasts-wrapper';
 
 export { Toast, ToastIcon, ToastsWrapper };
+export * from './toast';
+export * from './toast-icon';

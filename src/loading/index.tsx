@@ -7,11 +7,17 @@ import { generalClasses } from '../classes';
 export interface LoadingProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Width of each dot, like `0.5em`. */
   dotWidth?: string;
+  /** Height of each dot. */
   dotHeight?: string;
+  /** Scale the dots start from. */
   dotStartScale?: number;
+  /** Duration of one round, in milliseconds. */
   duration?: number;
+  /** Shows a spinner instead of dots. */
   spinner?: boolean;
+  /** Pauses the animation. */
   stopped?: boolean;
 }
 

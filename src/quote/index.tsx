@@ -7,10 +7,15 @@ import { generalClasses } from '../classes';
 export interface QuoteProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Author or source of the quote. */
   cite?: string;
+  /** Shows quote marks. */
   hasIcon?: boolean;
+  /** Your own icon as an SVG string. */
   icon?: string;
+  /** A larger quote. */
   large?: boolean;
 }
 
