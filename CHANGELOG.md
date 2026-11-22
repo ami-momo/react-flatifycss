@@ -4,7 +4,9 @@ All notable changes to this project are documented here. The format is based on 
 
 ## [Unreleased]
 
-Suggested version: 2.2.0 (minor), because props types are now exported. Everything else is a fix.
+## [2.2.0] - 2026-11-22
+
+A minor release because props types are now exported. Everything else is a fix.
 
 ### Added
 
@@ -33,5 +35,6 @@ Suggested version: 2.2.0 (minor), because props types are now exported. Everythi
 
 - Removed `peerDependencies`.
 
-[Unreleased]: https://github.com/ami-momo/react-flatifycss/compare/v2.1.2...HEAD
-[2.1.2]: https://www.npmjs.com/package/react-flatifycss/v/2.1.2
+[Unreleased]: https://github.com/ami-momo/react-flatifycss/compare/v2.2.0...HEAD
+[2.2.0]: https://github.com/ami-momo/react-flatifycss/compare/v2.1.2...v2.2.0
+[2.1.2]: https://github.com/ami-momo/react-flatifycss/releases/tag/v2.1.2
