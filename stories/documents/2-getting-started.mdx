@@ -1,0 +1,96 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documents/Getting Started" />
+
+# Getting Started
+
+<p className="component-doc-intro">Start using React FlatifyCSS after installing packages and importing the style file, here is how.</p>
+<div className="funky-spacer" />
+
+## Installing packages
+
+To install and use the library you should install both the `flatifycss` and `react-flatifycss` packages. We use the base `flatifycss` package to import styles.
+
+Use npm or Yarn to install the packages:
+
+### npm
+
+```bash
+npm i flatifycss react-flatifycss
+```
+
+### Yarn
+
+```bash
+yarn add flatifycss react-flatifycss
+```
+
+### Requirements
+
+| Package | Version |
+| --- | --- |
+| `react`, `react-dom` | 16.8 to 18 |
+| `flatifycss` | 2.x is recommended, 1.5 works too |
+
+`styled-components` comes with React FlatifyCSS, you do not need to install it yourself.
+
+## Import styles
+
+React FlatifyCSS itself does not include the FlatifyCSS styles, so you can import <a href="https://flatifycss.amimomo.me/docs/intro#css" target="_blank">your preferred stylesheet</a> in your application.
+
+```js
+import 'flatifycss/dist/css/flatify-min.css';
+```
+
+### Right to Left
+
+Since FlatifyCSS 2, the same file works for both directions, just set `dir="rtl"` on the `<html>` tag. If you are still on FlatifyCSS 1.x, import the RTL file instead:
+
+```js
+// only for flatifycss 1.x
+import 'flatifycss/dist/css/flatify-rtl-min.css';
+```
+
+## Use components!
+
+Now, just import the component you need from `react-flatifycss`, for example a simple button:
+
+```js
+import React from 'react';
+import { Button } from 'react-flatifycss';
+
+export default function App() {
+  return <Button theme="green">Success!</Button>;
+}
+```
+
+Congrats!
+
+## Toasts
+
+Toasts are rendered inside a few wrapper elements, one for each corner. Add `<ToastsWrapper />` once, near the root of your app, and every `<Toast />` finds its place:
+
+```js
+import { ToastsWrapper } from 'react-flatifycss';
+
+export default function App() {
+  return (
+    <>
+      <ToastsWrapper />
+      {/* the rest of your app */}
+    </>
+  );
+}
+```
+
+## TypeScript
+
+The package comes with its types. Props types are exported too, like `ButtonProps` or `ModalProps`, together with `Colors`, `Sizes` and `FlatifyGeneralProps`.
+
+## Server-side rendering
+
+`ToastsWrapper`, `Toast` and `Modal` use `document` while rendering, so with Next.js or other SSR frameworks render them only on the client, for example after a `useEffect` sets a `mounted` state, or with `next/dynamic` and `ssr: false`.
+
+## What next?
+
+Every component accepts a few [common props](?path=/docs/documents-common-props--docs) like `theme`, `size` and `sx`, take a look at them first.

@@ -7,9 +7,13 @@ import { generalClasses } from '../classes';
 export interface FireworksProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Delay before starting, in milliseconds. */
   delay?: number;
+  /** Duration of one round, in milliseconds. */
   duration?: number;
+  /** How many rounds to play, by default it never stops. */
   repeatCount?: number;
+  /** A simpler version with fewer sparks. */
   simple?: boolean;
 }
 
@@ -34,8 +38,8 @@ export function Fireworks(props: FireworksProps) {
       aria-hidden="true"
       className={clsx('fireworks', generalClasses(props), simple && 'simple')}
     >
-      {[...new Array(5)].map((a, i) => (
-        <span key={a + i} className="spark" />
+      {[...new Array(5)].map((_, i) => (
+        <span key={i} className="spark" />
       ))}
     </FireworksWrapper>
   );

@@ -7,7 +7,9 @@ import { generalClasses } from '../classes';
 export interface HighlightProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Fits it inside a line of text. */
   inline?: boolean;
 }
 

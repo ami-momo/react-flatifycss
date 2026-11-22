@@ -7,6 +7,10 @@ import { generalClasses } from '../classes';
 export interface SeparatorProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLHRElement>, 'color'> {
+  /**
+   * Shape of the separator.
+   * @default 'line'
+   */
   type?: 'dots' | 'short' | 'line';
 }
 

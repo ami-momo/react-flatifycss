@@ -1,0 +1,25 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as SeparatorStories from './separator.stories';
+
+<Meta of={SeparatorStories} />
+
+# Separator
+
+<p className="component-doc-intro">A little break between sections, three dots are often all a long page needs.</p>
+<div className="funky-spacer" />
+
+## Default
+
+The `type` prop can be `line` (default), `short` or `dots`.
+
+<Canvas of={SeparatorStories.Default} />
+<Canvas of={SeparatorStories.ShortLine} />
+<Canvas of={SeparatorStories.Dots} />
+
+## Theme
+
+<Canvas of={SeparatorStories.Theme} />
+
+## Props
+
+<ArgTypes of={SeparatorStories} />

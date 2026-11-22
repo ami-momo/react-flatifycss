@@ -10,22 +10,38 @@ export interface ToggleSwitchProps
       React.InputHTMLAttributes<HTMLInputElement>,
       'color' | 'onChange' | 'size'
     > {
+  /** Checked state, makes it controlled. Use `defaultChecked` for an uncontrolled one. */
   checked?: boolean;
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Border color of the `valid` state. */
   colorValid?: string;
+  /** Border color of the `warning` state. */
   colorWarning?: string;
+  /** Border color of the `invalid` state. */
   colorInvalid?: string;
+  /** Disables the element. */
   disabled?: boolean;
+  /** Puts the switch after the label. */
   isAfterLabel?: boolean;
+  /** Label text, you can use `children` instead. */
   label?: string;
+  /** Name of the input, radios in one group share the same name. */
   name?: string;
+  /** Called with the event, the checked state and the value. */
   onChange?: (
     event: React.ChangeEvent<HTMLInputElement>,
     checked: boolean,
     value: string | number | undefined | null
   ) => void;
+  /** Validation state. */
   state?: 'valid' | 'warning' | 'invalid';
+  /**
+   * Works as a checkbox or a radio.
+   * @default 'checkbox'
+   */
   type?: 'checkbox' | 'radio';
+  /** Value of the input. */
   value?: string | number;
 }
 

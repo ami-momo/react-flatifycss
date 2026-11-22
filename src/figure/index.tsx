@@ -7,15 +7,25 @@ import { generalClasses } from '../classes';
 export interface FigureProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLImageElement>, 'color'> {
+  /** Image alternative text, required. */
   alt: string;
+  /** Caption under the image. */
   caption?: string;
+  /** Centers the figure. */
   centered?: boolean;
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Name of the image author. */
   creditName?: string;
+  /** Link of the image author. */
   creditLink?: string;
+  /** Color of the credit badge. */
   creditTheme?: Colors;
+  /** Full width image. */
   fill?: boolean;
+  /** Puts the caption over the image. */
   overlayCaption?: boolean;
+  /** Image address, required. */
   src: string;
 }
 
@@ -58,15 +68,17 @@ export function Figure(props: FigureProps) {
       {creditLink && creditName ? (
         <a
           href={creditLink}
-          className={clsx('source', `style-${creditTheme}`)}
+          className={clsx('source', creditTheme && `style-${creditTheme}`)}
           target="_blank"
-          rel="nofollow"
+          rel="nofollow noreferrer"
         >
           {creditName}
         </a>
       ) : (
         creditName && (
-          <span className={clsx('source', `style-${creditTheme}`)}>
+          <span
+            className={clsx('source', creditTheme && `style-${creditTheme}`)}
+          >
             {creditName}
           </span>
         )

@@ -1,0 +1,25 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as HamburgerStories from './hamburger.stories';
+
+<Meta of={HamburgerStories} />
+
+# Hamburger
+
+<p className="component-doc-intro">The classic menu icon, three lines that turn into a cross when the menu is open.</p>
+<div className="funky-spacer" />
+
+## Default
+
+Control it with the `active` prop. Here it is rendered as a button with `as="button"`, so set `label` too.
+
+<Canvas of={HamburgerStories.Default} />
+
+## Inside a button
+
+It can live inside a `<Button />` as an icon. In this case give the button the accessible name with `aria-label` and tell screen readers if the menu is open with `aria-expanded`.
+
+<Canvas of={HamburgerStories.WithButton} />
+
+## Props
+
+<ArgTypes of={HamburgerStories} />

@@ -1,36 +1,30 @@
-import { Canvas, Story } from '@storybook/addon-docs';
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as BreadcrumbsStories from './breadcrumbs.stories';
+
+<Meta of={BreadcrumbsStories} />
 
 # Breadcrumbs
 
-<p class="component-doc-intro">
-  Breadcrumbs are a necessary part of any website, they determine where users
-  are so they can navigate.
-</p>
-<div class="funky-spacer" />
+<p className="component-doc-intro">Breadcrumbs are a necessary part of any website, they determine where users are so they can navigate.</p>
+<div className="funky-spacer" />
 
 ## Default
 
-Always set the `⁣label` prop for `<Breadcrumbs />⁣` component. It is used by screen readers to tell users about your breadcrumbs. For example, your page might have more than one breadcrumb, so be sure to describe them differently and improve your website's accessibility.
+Always set the `label` prop for `<Breadcrumbs />` component. It is used by screen readers to tell users about your breadcrumbs. For example, your page might have more than one breadcrumb, so be sure to describe them differently and improve your website's accessibility.
 
-<Canvas>
-  <Story id="components-breadcrumbs--default" />
-</Canvas>
+<Canvas of={BreadcrumbsStories.Default} />
 
 ## Fit content
 
 To limit breadcrumbs wrapper width to available content width, set the `fitContent` to `true` for `<Breadcrumbs />` component.
 
-<Canvas>
-  <Story id="components-breadcrumbs--fit-content" />
-</Canvas>
+<Canvas of={BreadcrumbsStories.FitContent} />
 
 ## Scrollable
 
 By default, if breadcrumbs overflow, it will be scrollable.
 
-<Canvas>
-  <Story id="components-breadcrumbs--scrollable" />
-</Canvas>
+<Canvas of={BreadcrumbsStories.Scrollable} />
 
 ## Scroll to the end
 
@@ -38,6 +32,8 @@ Following UX best practices, it is suggested to set the scroll to the end of bre
 
 However, it is not done by default, you can set the `scrollTo` to `left` or `right` for `<Breadcrumbs />` component.
 
-<Canvas>
-  <Story id="components-breadcrumbs--scroll-to-end" />
-</Canvas>
+<Canvas of={BreadcrumbsStories.ScrollToEnd} />
+
+## Props
+
+<ArgTypes of={BreadcrumbsStories} />

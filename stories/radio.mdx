@@ -1,58 +1,50 @@
-import { Canvas, Story } from '@storybook/addon-docs';
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as RadioStories from './radio.stories';
+
+<Meta of={RadioStories} />
 
 # Radio
 
-<p class="component-doc-intro">
-  Radios are used when there are multiple options, but the limit is one, users
-  can choose to have one of them.
-</p>
-<div class="funky-spacer" />
+<p className="component-doc-intro">Radios are used when there are multiple options, but the limit is one, users can choose to have one of them.</p>
+<div className="funky-spacer" />
 
 ## Default
 
 To have a **controlled** radio (that you control the checked state yourself), add the `checked` prop.  
-To toggle, you can use the second argument of `onChange` event like so, `onChange={(e, checked) => setChecked(!checked)}`
+To toggle, you can use the second argument of `onChange` event like so, `onChange={(e, checked) => setChecked(checked)}`
 
-<Canvas>
-  <Story id="forms-radio--default" />
-</Canvas>
+<Canvas of={RadioStories.Default} />
 
 ## Uncontrolled
 
 You can specify the radio default value with `defaultChecked` prop, then toggle by using the `onChange` second argument.
 
-<Canvas>
-  <Story id="forms-radio--uncontrolled" />
-</Canvas>
+<Canvas of={RadioStories.Uncontrolled} />
 
 ## Multiple
 
-When you want to choose one option from available options, you can use `value` with `checked` props.  
-Here is how, each radio has its specific `name`, a `value` that is set to active radio `name` and `onChange` event third argument, which represents the selected radio `name` like so:
-`onChange={(e, checked, value) => setChecked(value)}`
+When you want to choose one option from available options, give all the radios the same `name` and each one its own `value`.  
+Keep the selected value in your state, a radio is `checked` when its value matches it, and the third argument of `onChange` is the value of the radio that was just selected:
+`onChange={(e, checked, value) => setSelected(value)}`
 
-<Canvas>
-  <Story id="forms-radio--multiple" />
-</Canvas>
+<Canvas of={RadioStories.Multiple} />
 
 ## Disabled
 
-<Canvas>
-  <Story id="forms-radio--disabled" />
-</Canvas>
+<Canvas of={RadioStories.Disabled} />
 
 ## States
 
 All form elements have `valid`, `warning` and `invalid` states, you can determine with `state` prop.
 
-<Canvas>
-  <Story id="forms-radio--states" />
-</Canvas>
+<Canvas of={RadioStories.States} />
 
 ## Customized
 
 Let's customize states of the radio styles with `colorInvalid`, `colorValid` and `colorWarning` props.
 
-<Canvas>
-  <Story id="forms-radio--customized" />
-</Canvas>
+<Canvas of={RadioStories.Customized} />
+
+## Props
+
+<ArgTypes of={RadioStories} />

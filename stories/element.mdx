@@ -1,17 +1,19 @@
-import { Canvas, Story } from '@storybook/addon-docs';
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as ElementStories from './element.stories';
 
-# Box
+<Meta of={ElementStories} />
 
-<p class="component-doc-intro">
-  Element is a general purpose component to extend with the power of FlatifyCSS
-  features and styled-components.
-</p>
-<div class="funky-spacer" />
+# Element
+
+<p className="component-doc-intro">Element is a general purpose component to extend with the power of FlatifyCSS features and styled-components.</p>
+<div className="funky-spacer" />
 
 ## Common example
 
-Let's create a card with `</Element>` component, using `sx` prop to apply styles with styled-components library and `as` prop to define the semantic for HTML tag.
+Let's create a card with the `<Element />` component, using `sx` prop to apply styles with styled-components library and `as` prop to define the semantic for HTML tag.
 
-<Canvas>
-  <Story id="components-element--default" />
-</Canvas>
+<Canvas of={ElementStories.Default} />
+
+## Props
+
+`<Element />` takes any prop and passes it to the HTML element, plus the [common props](?path=/docs/documents-common-props--docs). It renders a `<div>` unless you change it with `as`.

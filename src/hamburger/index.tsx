@@ -7,7 +7,9 @@ import { generalClasses } from '../classes';
 export interface HamburgerProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Shows a cross instead of three lines. */
   active: boolean;
+  /** Accessible label, read by screen readers. */
   label?: string;
 }
 

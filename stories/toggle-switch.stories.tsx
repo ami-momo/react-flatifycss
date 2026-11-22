@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { ToggleSwitch } from '../src';
-import ToggleSwitchPage from './toggle-switch.mdx';
 
 const meta: Meta = {
   title: 'Forms/Toggle Switch',
   component: ToggleSwitch,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: ToggleSwitchPage,
-    },
   },
 };
 
@@ -96,7 +92,7 @@ const UncontrolledRadiosTemplate: Story = args => (
     <ToggleSwitch
       {...args}
       type="radio"
-      name="choice"
+      name="choice-uncontrolled"
       value="heart"
       sx={`svg {
           width: 2em;
@@ -111,7 +107,7 @@ const UncontrolledRadiosTemplate: Story = args => (
     <ToggleSwitch
       {...args}
       type="radio"
-      name="choice"
+      name="choice-uncontrolled"
       value="mind"
       isAfterLabel
       defaultChecked

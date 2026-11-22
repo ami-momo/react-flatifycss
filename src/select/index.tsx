@@ -6,33 +6,47 @@ import { FlatifyGeneralProps } from '../interfaces';
 import { generalClasses } from '../classes';
 
 export interface SelectOptionProps {
+  /** Label text. */
   label?: string;
+  /** Selected value, makes it controlled. */
   value?: string;
+  /** Options, each one has `label` and `value`, or `options` for a group. */
   options?: SelectSubOptionProps[];
 }
 
 export interface SelectSubOptionProps {
+  /** Label text. */
   label?: string;
+  /** Selected value, makes it controlled. */
   value?: string;
 }
 
 export interface SelectProps
   extends FlatifyGeneralProps,
     Omit<
-      React.HTMLAttributes<HTMLSelectElement>,
-      'color' | 'onChange' | 'value'
+      React.SelectHTMLAttributes<HTMLSelectElement>,
+      'color' | 'onChange' | 'value' | 'size' | 'defaultValue'
     > {
+  /** Initial value of an uncontrolled select. */
   defaultValue?: string | string[];
+  /** Puts the label on the same line. */
   inlineLabel?: boolean;
+  /** HTML id. */
   id?: string;
+  /** Options, each one has `label` and `value`, or `options` for a group. */
   options: SelectOptionProps[];
+  /** Label text. */
   label?: string;
+  /** Lets users choose more than one option. */
   multiple?: boolean;
+  /** Name of the input, radios in one group share the same name. */
   name?: string;
+  /** Called with the value and the event. */
   onChange?: (
     value: string | string[],
     event: React.ChangeEvent<HTMLSelectElement>
   ) => void;
+  /** Selected value, makes it controlled. */
   value?: string | string[];
 }
 
@@ -107,7 +121,7 @@ export const Select = forwardRef(
           value={selectValue}
           onChange={handleChange}
         >
-          {options.length &&
+          {options.length > 0 &&
             options.map((option: SelectOptionProps, i) => {
               const { label: subLabel, options: subOptions } = option;
               if (subOptions && subOptions.length) {

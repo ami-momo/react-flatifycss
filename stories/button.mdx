@@ -1,0 +1,66 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as ButtonStories from './button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+<p className="component-doc-intro">Buttons are everywhere, so they come in a few priorities, shapes and states. Click one, they are a bit bouncy.</p>
+<div className="funky-spacer" />
+
+## Default
+
+<Canvas of={ButtonStories.Default} />
+
+## Priority
+
+Not every button is equally important, use the `variant` prop to show it: `primary`, `secondary` or `tertiary`.
+
+<Canvas of={ButtonStories.Primary} />
+<Canvas of={ButtonStories.Secondary} />
+<Canvas of={ButtonStories.Tertiary} />
+
+## Outline
+
+Add the `outline` prop for a button with only borders, kind of a ninja, which gets less attention but is still there. The `bordered` prop is its friend that keeps the background.
+
+<Canvas of={ButtonStories.Outline} />
+
+## Two layer
+
+Set `secondaryText` and the button shows it on hover and focus. It can be text or any React node, like an icon.
+
+<Canvas of={ButtonStories.TwoLayer} />
+<Canvas of={ButtonStories.TwoLayerIcon} />
+
+## Loading
+
+Set `loading` to cover the text with three dots, add `spinnerLoading` too if you prefer a spinner.
+
+<Canvas of={ButtonStories.Loading} />
+
+## States
+
+The `state` prop keeps the button in one look: `active` looks pressed, `static` does not react to hover and clicks, and `disabled` disables it, same as the `disabled` prop.
+
+```jsx
+<Button state="active">Active</Button>
+<Button state="static">Static</Button>
+<Button state="disabled">Disabled</Button>
+```
+
+## Links
+
+A button with `href` is still a `<button>`, add `as="a"` to render a real link.
+
+<Canvas of={ButtonStories.LinkButton} />
+
+## Customized
+
+With the `sx` prop and FlatifyCSS variables, a button can look like anything. Click it.
+
+<Canvas of={ButtonStories.Customized} />
+
+## Props
+
+<ArgTypes of={ButtonStories} />

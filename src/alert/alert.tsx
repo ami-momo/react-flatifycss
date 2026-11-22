@@ -9,8 +9,11 @@ import { hasSpecificChildren } from '../utils/children';
 export interface AlertProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** CSS `animation` value played when the alert is hidden. */
   animation?: string;
+  /** Content of the component. */
   children: any;
+  /** `false` hides the alert with its animation and then unmounts it. */
   show?: boolean;
 }
 

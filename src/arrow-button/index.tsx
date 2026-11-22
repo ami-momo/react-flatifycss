@@ -7,9 +7,13 @@ import { generalClasses } from '../classes';
 export interface ArrowButtonProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLButtonElement>, 'color'> {
+  /** Where the arrow points. */
   direction?: 'top' | 'bottom' | 'left' | 'right';
+  /** Gives it the button look. */
   isButton?: boolean;
+  /** Turns the arrow the other way around. */
   isFlipped?: boolean;
+  /** Accessible label, read by screen readers. */
   label: string;
 }
 

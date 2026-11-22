@@ -1,30 +1,27 @@
-import { Canvas, Story } from '@storybook/addon-docs';
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as BadgeStories from './badge.stories';
+
+<Meta of={BadgeStories} />
 
 # Badge
 
-<p class="component-doc-intro">
-  Use badges to show numbers, texts, or just as an icon to get user attention,
-  badges get their size from parent font size either you can set a specific
-  size.
-</p>
-<div class="funky-spacer" />
+<p className="component-doc-intro">Use badges to show numbers, texts, or just as an icon to get user attention, badges get their size from parent font size either you can set a specific size.</p>
+<div className="funky-spacer" />
 
 ## Default
 
-<Canvas>
-  <Story id="components-badge--default" />
-</Canvas>
+<Canvas of={BadgeStories.Default} />
 
 ## Pulse
 
-Pulse is an added animation so it will get users' attention where is it necessary.
+Pulse is an added animation so it will get users' attention where it is necessary.
 
-<Canvas>
-  <Story id="components-badge--pulse" />
-</Canvas>
+<Canvas of={BadgeStories.Pulse} />
 
 ## Customization
 
-<Canvas>
-  <Story id="components-badge--customized" />
-</Canvas>
+<Canvas of={BadgeStories.Customized} />
+
+## Props
+
+<ArgTypes of={BadgeStories} />

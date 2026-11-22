@@ -6,20 +6,30 @@ import { generalClasses } from '../classes';
 import Item from './item';
 
 export interface itemProps {
+  /** Class names added when the item is active. */
   activeClassName?: string;
+  /** Extra class names. */
   className?: string;
+  /** Second line of the item. */
   subtitle?: string;
+  /** Icon of the item. */
   svg?: React.ReactNode;
+  /** Title of the item. */
   title: string;
+  /** Value of the selected item. */
   value: string | number;
 }
 
 export interface ItemsGroupProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color' | 'onChange'> {
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Items as an array, you can use `<Item />` children instead. */
   items?: itemProps[];
+  /** Called with the value of the selected item. */
   onChange?: (value: any) => void;
+  /** Value of the selected item. */
   value: string | number;
 }
 

@@ -1,0 +1,91 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { Button, Badge } from '../../src';
+
+<Meta title="Documents/Common Props" />
+
+# Common props
+
+<p className="component-doc-intro">Every component accepts the same handful of props for colors, size, shape and styles, so once you learn them here you know them everywhere.</p>
+<div className="funky-spacer" />
+
+| Prop | Type | What it does |
+| --- | --- | --- |
+| `theme` | `Colors` | Background, text and border colors, adds a `.style-{theme}` class |
+| `color` | `Colors` | Only the text color, adds a `.color-{color}` class |
+| `size` | `Sizes` | Font size, and because everything is in `em`, the whole component size. Adds a `.size-{size}` class |
+| `roundness` | see below | Border radius, adds an `.edge-{roundness}` class |
+| `sx` | `string` | Your own CSS, see [dynamic styles](?path=/docs/documents-dynamic-styles--docs) |
+| `as` | `ElementType` | Changes the HTML tag or the wrapper component, like `as="a"` |
+| `className` | `string` | Extra class names |
+| `id` | `string` | HTML id |
+| `data-testid` | `string` | For your tests |
+
+`default` is accepted by `theme`, `color`, `size` and `roundness`, and it means no class at all.
+
+## theme and color
+
+<p>
+  <Button theme="purple">theme="purple"</Button>{' '}
+  <Button theme="purple-light">theme="purple-light"</Button>{' '}
+  <Button color="purple">color="purple"</Button>
+</p>
+
+```jsx
+<Button theme="purple">theme="purple"</Button>
+<Button theme="purple-light">theme="purple-light"</Button>
+<Button color="purple">color="purple"</Button>
+```
+
+Both take one of the `Colors` values. Every color has a light version too:
+
+| Colors | |
+| --- | --- |
+| Palette | `blue`, `green`, `yellow`, `orange`, `red`, `pink`, `purple` |
+| States | `accent`, `success`, `info`, `warning`, `danger` |
+| Grays | `light`, `dark` |
+| Light versions | add `-light` to any of the above, like `red-light` or `success-light` |
+
+The actual hex values are on the <a href="https://flatifycss.amimomo.me/docs/overview/colors" target="_blank">FlatifyCSS colors page</a>.
+
+## size
+
+<p>
+  <Badge size="sm">sm</Badge> <Badge>default</Badge> <Badge size="lg">lg</Badge>{' '}
+  <Badge size="2x">2x</Badge>
+</p>
+
+| `size` | `font-size` |
+| --- | --- |
+| `xs` | `0.75em` |
+| `sm` | `0.9em` |
+| `md` | `1em` |
+| `lg` | `1.25em` |
+| `2x` | `1.5em` |
+| `3x` | `2.2em` |
+| `4x` | `2.5em` |
+| `5x` | `3.14em` |
+
+## roundness
+
+| `roundness` | `border-radius` |
+| --- | --- |
+| `sharp` | `0` |
+| `round-sm` | `0.5em` |
+| `round-md` | `0.75em` |
+| `round-lg` | `1em` |
+| `circle` | `50em` |
+| `oval` | `50%` |
+| `triangle` | a playful triangle-ish shape |
+
+## TypeScript
+
+`Colors`, `Sizes` and `FlatifyGeneralProps` are exported, so you can use them in your own components:
+
+```ts
+import type { Colors, FlatifyGeneralProps } from 'react-flatifycss';
+
+interface MyCardProps extends FlatifyGeneralProps {
+  title: string;
+  accent?: Colors;
+}
+```

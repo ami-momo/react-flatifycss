@@ -5,25 +5,65 @@ import styled from 'styled-components';
 import getUniqueID from '../utils/id-generator';
 import { FlatifyGeneralProps } from '../interfaces';
 import { generalClasses } from '../classes';
+import { getChildType } from '../utils/children';
 
 export interface DropdownProps extends FlatifyGeneralProps {
+  /** When clicks close it: `true` anywhere, `inside`, `outside`, or `false` never. */
   autoClose?: boolean | 'outside' | 'inside';
+  /** Content of the component. */
   children?: React.ReactNode;
+  /**
+   * Delay before showing on hover, in milliseconds.
+   * @default 200
+   */
   hoverShowDelay?: number;
+  /**
+   * Delay before hiding on hover, in milliseconds.
+   * @default 400
+   */
   hoverHideDelay?: number;
+  /** Opens on hover and focus, like a tooltip. */
   isHoverable?: boolean;
+  /** Unique id, required for accessibility. */
   id: string;
+  /**
+   * Horizontal offset in pixels.
+   * @default 0
+   */
   offsetX?: number;
+  /**
+   * Vertical offset in pixels.
+   * @default 20
+   */
   offsetY?: number;
+  /** CSS `animation` value used to show it, like `my-show 0.3s ease`. */
   showAnimation?: string;
+  /** CSS `animation` value used to hide it. */
   hideAnimation?: string;
+  /**
+   * Where it opens.
+   * @default 'bottom'
+   */
   placement?: 'top' | 'bottom' | 'left' | 'right';
 }
 
 export interface PopperOptionsProps {
+  /** Internal. */
   arrowElement: HTMLElement | null;
+  /**
+   * Horizontal offset in pixels.
+   * @default 0
+   */
   offsetX: number | undefined;
+  /**
+   * Vertical offset in pixels.
+   * @default 20
+   */
   offsetY: number | undefined;
+  /**
+   * Where it opens.
+   * @default 'bottom'
+   */
   placement: 'top' | 'bottom' | 'left' | 'right' | undefined;
 }
 
@@ -214,10 +254,10 @@ export default function Dropdown(props: DropdownProps) {
     <DropdownWrapper
       {...rest}
       id={`wrapper-${id}`}
-      className={clsx('dropdown-wrapper', ...generalClasses(props), className)}
+      className={clsx('dropdown-wrapper', ...generalClasses(props))}
     >
       {React.Children.map(children, (child: any) => {
-        if (child.props && child.props.__TYPE === 'DropdownButton') {
+        if (getChildType(child) === 'DropdownButton') {
           return React.cloneElement(child, {
             innerRef: setReferenceElement,
             id: buttonId,
@@ -231,7 +271,7 @@ export default function Dropdown(props: DropdownProps) {
       })}
 
       {React.Children.map(children, (child: any) => {
-        if (child.props && child.props.__TYPE === 'DropdownBody') {
+        if (getChildType(child) === 'DropdownBody') {
           return React.cloneElement(child, {
             ...attributes.popper,
             innerRef: setPopperElement,

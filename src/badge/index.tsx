@@ -7,8 +7,11 @@ import { generalClasses } from '../classes';
 export interface BadgeProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Adds a pulse animation to get attention. */
   pulse?: boolean;
+  /** Badge text, you can use `children` instead. */
   text?: string;
 }
 

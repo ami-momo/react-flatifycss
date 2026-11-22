@@ -1,0 +1,33 @@
+# React FlatifyCSS
+
+> A collection of 27 flat design React components based on FlatifyCSS, written in TypeScript and styled with styled-components. Accessible, keyboard friendly, with right to left support. MIT licensed, made by Amir M. Mohamadi.
+
+The playground at https://react-flatifycss.amimomo.me/playground/ is rendered with JavaScript, so the sources below are easier for agents to read.
+
+Install: `npm i flatifycss react-flatifycss`, then `import 'flatifycss/dist/css/flatify-min.css'` once in your app. Requires React 16.8 to 18. Components take common props: `theme`, `color`, `size`, `roundness`, `sx` (your own CSS) and `as` (change the HTML tag). Add `<ToastsWrapper />` once near the root to use toasts.
+
+## Docs
+
+- [README](https://raw.githubusercontent.com/ami-momo/react-flatifycss/master/README.md): Install, requirements, component list and development
+- [Getting started](https://raw.githubusercontent.com/ami-momo/react-flatifycss/master/stories/documents/2-getting-started.mdx): Install, import styles, toasts, TypeScript and server-side rendering
+- [Common props](https://raw.githubusercontent.com/ami-momo/react-flatifycss/master/stories/documents/5-common-props.mdx): theme, color, size, roundness, sx and as
+- [Changelog](https://raw.githubusercontent.com/ami-momo/react-flatifycss/master/CHANGELOG.md)
+- [AGENTS.md](https://raw.githubusercontent.com/ami-momo/react-flatifycss/master/AGENTS.md): Commands, layout and conventions for coding agents working on the repository
+
+## Components
+
+Each component has a docs page (`stories/<name>.mdx`) and examples (`stories/<name>.stories.tsx`) in the repository, and its props are typed with descriptions in `src/<name>/`.
+
+- Buttons: Button, ButtonGroup, AddButton, ArrowButton, Hamburger, Badge
+- Content: Figure, Highlight, Quote, Separator
+- Forms: Input, Checkbox, Radio, Select, ToggleSwitch
+- Others: Accordion, Alert, Breadcrumbs, Dropdown, Element, Fireworks, ItemsGroup, Loading, Modal, Progress, Tabs, Toast
+
+- [Props and examples on GitHub](https://github.com/ami-momo/react-flatifycss/tree/master/stories)
+- [Component source and types](https://github.com/ami-momo/react-flatifycss/tree/master/src)
+
+## Related
+
+- [FlatifyCSS](https://flatifycss.amimomo.me): The CSS framework these components are built on, with its own llms.txt at https://flatifycss.amimomo.me/llms.txt
+- [npm package](https://www.npmjs.com/package/react-flatifycss)
+- [Playground](https://react-flatifycss.amimomo.me/playground/): Interactive Storybook

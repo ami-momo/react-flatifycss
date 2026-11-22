@@ -1,31 +1,38 @@
-import { Canvas, Story } from '@storybook/addon-docs';
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as ItemsGroupStories from './items-group.stories';
+import { Item } from '../src';
+
+<Meta of={ItemsGroupStories} />
 
 # Items group
 
-<p class="component-doc-intro">
-  With items group you can display a list of items that can be selected. Each
-  item can have title, subtitle, and an icon.
-</p>
-<div class="funky-spacer" />
+<p className="component-doc-intro">With items group you can display a list of items that can be selected. Each item can have title, subtitle, and an icon.</p>
+<div className="funky-spacer" />
 
 ## Default
 
 This component supports items both as an array of objects or children.
 
-<Canvas>
-  <Story id="components-items-group--default" />
-</Canvas>
+<Canvas of={ItemsGroupStories.Default} />
 
 ## With component
 
 In this example items are passed as children with the `<Item />` component.
 
-<Canvas>
-  <Story id="components-items-group--with-component" />
-</Canvas>
+<Canvas of={ItemsGroupStories.WithComponent} />
 
 ## Customization
 
-<Canvas>
-  <Story id="components-items-group--customized" />
-</Canvas>
+<Canvas of={ItemsGroupStories.Customized} />
+
+## Props
+
+### ItemsGroup
+
+<ArgTypes of={ItemsGroupStories} />
+
+### Item
+
+<ArgTypes of={Item} />
+
+`<ItemIcon />` wraps your SVG icon, it only needs `children`.

@@ -16,4 +16,10 @@ describe('Input', () => {
 
     expect(screen.getByTestId<HTMLInputElement>('input').value).toBe('foo');
   });
+
+  it('should start with defaultValue', async () => {
+    render(<Input id="test-id" data-testid="input" defaultValue="hello" />);
+
+    expect(screen.getByTestId<HTMLInputElement>('input').value).toBe('hello');
+  });
 });

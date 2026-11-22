@@ -1,16 +1,12 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { Breadcrumbs } from '../src';
-import BreadcrumbsPage from './breadcrumbs.mdx';
 
 const meta: Meta = {
   title: 'Components/Breadcrumbs',
   component: Breadcrumbs,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: BreadcrumbsPage,
-    },
   },
 };
 

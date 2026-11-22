@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { Modal, Button, ModalHeader, ModalBody, ModalFooter } from '../src';
-import ModalPage from './modal.mdx';
 
 const meta: Meta = {
   title: 'Components/Modal',
   component: Modal,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: ModalPage,
-    },
   },
 };
 

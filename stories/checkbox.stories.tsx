@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import { Checkbox } from '../src';
-import CheckboxPage from './checkbox.mdx';
 
 const meta: Meta = {
   title: 'Forms/Checkbox',
   component: Checkbox,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: CheckboxPage,
-    },
   },
 };
 

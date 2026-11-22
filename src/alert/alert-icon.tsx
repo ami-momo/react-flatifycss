@@ -7,8 +7,10 @@ import { generalClasses } from '../classes';
 export interface AlertIconProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** The icon, usually an SVG. */
   children: React.ReactNode;
-  __TYPE: 'AlertIcon';
+  /** Internal, used to find this component among children. Do not set it. */
+  __TYPE?: 'AlertIcon';
 }
 
 const AlertIconWrapper = styled.div`
@@ -28,7 +30,5 @@ export default function AlertIcon(props: AlertIconProps) {
   );
 }
 
-AlertIcon.defaultProps = {
-  // parent uses this type name to detect if alert has icon to add the specific className.
-  __TYPE: 'AlertIcon',
-};
+// <Alert /> uses this type name to detect if it has an icon to add the specific className.
+AlertIcon.__TYPE = 'AlertIcon';

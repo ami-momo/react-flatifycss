@@ -8,18 +8,31 @@ import { generalClasses } from '../classes';
 export interface ButtonProps
   extends FlatifyGeneralProps,
     Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'color'> {
+  /** Adds borders. */
   bordered?: boolean;
+  /** `false` removes the button styles, adds `.no-style`. */
   buttonStyle?: boolean;
+  /** Content of the component. */
   children?: React.ReactNode;
+  /** Disables the element. */
   disabled?: boolean;
+  /** Link address, use it with `as="a"`. */
   href?: string;
+  /** Covers the text with a loading animation. */
   loading?: boolean;
+  /** Uses a spinner instead of dots when `loading` is set. */
   spinnerLoading?: boolean;
+  /** Click handler. */
   onClick?: () => void;
+  /** Only borders, no background. */
   outline?: boolean;
+  /** Text or icon shown on hover and focus, makes a two layer button. */
   secondaryText?: React.ReactNode | string;
+  /** Keeps the button in one state: `active`, `static` or `disabled`. */
   state?: 'active' | 'static' | 'disabled';
+  /** Button text, you can use `children` instead. */
   text?: string;
+  /** Importance of the button. */
   variant?: 'primary' | 'secondary' | 'tertiary';
 }
 

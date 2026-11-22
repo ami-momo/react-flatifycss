@@ -1,21 +1,17 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
 } from '../src';
-import AccordionPage from './accordion.mdx';
 
 const meta: Meta = {
   title: 'Components/Accordion',
   component: Accordion,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: AccordionPage,
-    },
   },
 };
 
@@ -131,6 +127,8 @@ export const Bordered = Template.bind({});
 export const Multiple = Template.bind({});
 export const FadeAnimation = Template.bind({});
 export const Duration = Template.bind({});
+export const DefaultOpen = Template.bind({});
+export const ReadOnly = Template.bind({});
 export const Customized = TemplateCustom.bind({});
 
 Default.args = {
@@ -174,6 +172,19 @@ Duration.args = {
   collapsible: true,
   bordered: true,
   duration: 500,
+};
+
+DefaultOpen.args = {
+  hasIcon: true,
+  bordered: true,
+  defaultIndex: 1,
+};
+
+ReadOnly.args = {
+  hasIcon: true,
+  bordered: true,
+  defaultIndex: 0,
+  readOnly: true,
 };
 
 Customized.args = {

@@ -10,11 +10,16 @@ import { generalClasses } from '../classes';
 export interface ModalProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Adds borders. */
   bordered?: boolean;
+  /** Shows or hides the modal. */
   isOpen?: boolean;
   onDismiss?(event: React.MouseEvent | React.KeyboardEvent): void;
+  /** Class names of the overlay, it is rendered in `body` so styles should be global. */
   overlayClassName?: string;
+  /** Where the modal appears. */
   position?: 'center' | 'top' | 'bottom' | 'left' | 'right';
+  /** Clicking the overlay does not dismiss the modal. */
   disableOverlayClick?: boolean;
 }
 

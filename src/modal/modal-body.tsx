@@ -7,6 +7,7 @@ import { generalClasses } from '../classes';
 export interface ModalBodyProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Content of the component. */
   children?: React.ReactNode;
 }
 

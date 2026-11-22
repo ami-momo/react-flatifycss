@@ -1,32 +1,29 @@
 name: CI
-on: [push]
+on:
+  push:
+    branches: [master]
+  pull_request:
+
 jobs:
   build:
-    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
-
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node: ['16.x']
-        os: [ubuntu-latest]
-
+    name: Build, lint, and test
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: Use Node ${{ matrix.node }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node }}
+      - uses: oven-sh/setup-bun@v2
 
-      - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
+      - name: Install
+        run: bun install --frozen-lockfile
 
       - name: Lint
-        run: npm run lint
+        run: bun run lint src
 
       - name: Test
-        run: npm run test --ci --coverage --maxWorkers=2
+        run: bun run test --ci --maxWorkers=2
 
       - name: Build
-        run: npm run build
+        run: bun run build
+
+      - name: Build Storybook
+        run: bun run build-storybook

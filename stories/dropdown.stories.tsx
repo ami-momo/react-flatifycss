@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Meta, Story } from '@storybook/react';
+import type { Meta, StoryFn as Story } from '@storybook/react-vite';
 import {
   Button,
   ButtonGroup,
@@ -7,16 +7,12 @@ import {
   DropdownButton,
   DropdownBody,
 } from '../src';
-import DropdownPage from './dropdown.mdx';
 
 const meta: Meta = {
   title: 'Components/Dropdown',
   component: Dropdown,
   parameters: {
     controls: { expanded: true },
-    docs: {
-      page: DropdownPage,
-    },
   },
 };
 
@@ -78,7 +74,7 @@ const SplitButtonTemplate: Story = args => (
 const TooltipTemplate: Story = args => (
   <>
     Lorem, ipsum dolor sit amet consectetur adipisicing elit,
-    <Dropdown id="test-tooltip" {...args}>
+    <Dropdown id="test-tooltip-1" {...args}>
       <DropdownButton buttonStyle={false} color="red">
         open it!
       </DropdownButton>
@@ -89,7 +85,7 @@ const TooltipTemplate: Story = args => (
     <br />
     Reiciendis non magnam repellendus adipisci nihil ipsum dolore, totam
     temporibus
-    <Dropdown id="test-tooltip" {...args} placement="right">
+    <Dropdown id="test-tooltip-2" {...args} placement="right">
       <DropdownButton className="link-button" variant="tertiary">
         expedita laborum
       </DropdownButton>
@@ -175,27 +171,33 @@ export const Tooltip = TooltipTemplate.bind({});
 export const Customized = Custom.bind({});
 
 Default.args = {
-  children: 'Im a dropdown',
-  isMenu: false,
+  id: 'dropdown-default',
   autoClose: true,
 };
 
-MenuItems.args = { autoClose: true };
+MenuItems.args = {
+  id: 'dropdown-menu',
+  autoClose: true,
+};
 
 Placement.args = {
+  id: 'dropdown-placement',
   placement: 'right',
   autoClose: true,
 };
 
 Hoverable.args = {
+  id: 'dropdown-hoverable',
   isHoverable: true,
 };
 
 AutoClose.args = {
+  id: 'dropdown-auto-close',
   autoClose: 'inside',
 };
 
 Offset.args = {
+  id: 'dropdown-offset',
   offsetX: 120,
   offsetY: -10,
 };
@@ -203,4 +205,12 @@ Offset.args = {
 Tooltip.args = {
   isHoverable: true,
   offsetY: 0,
+};
+
+SplitButton.args = {
+  id: 'dropdown-split',
+};
+
+Customized.args = {
+  id: 'dropdown-customized',
 };

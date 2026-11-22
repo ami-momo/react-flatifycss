@@ -8,9 +8,13 @@ import { generalClasses } from '../classes';
 export interface TabListProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
+  /** Centers the tabs. */
   centered?: boolean;
+  /** Content of the component. */
   children: React.ReactNode;
+  /** Where the active line is. */
   linePosition?: 'bottom' | 'top';
+  /** Scrolls instead of wrapping to the next line. */
   scrollable?: boolean;
 }
 

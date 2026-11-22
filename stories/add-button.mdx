@@ -1,0 +1,19 @@
+import { Meta, Canvas, ArgTypes } from '@storybook/addon-docs/blocks';
+import * as AddButtonStories from './add-button.stories';
+
+<Meta of={AddButtonStories} />
+
+# Add button
+
+<p className="component-doc-intro">A plus sign that turns into a minus, good for expanding things or adding items to a list.</p>
+<div className="funky-spacer" />
+
+## Default
+
+Toggle the `active` prop to switch between plus and minus. It has no text, so always set the `label` prop, screen readers read it.
+
+<Canvas of={AddButtonStories.Default} />
+
+## Props
+
+<ArgTypes of={AddButtonStories} />

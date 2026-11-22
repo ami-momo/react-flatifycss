@@ -9,8 +9,11 @@ export interface TabPanelsProps
   extends FlatifyGeneralProps,
     Omit<React.HTMLAttributes<HTMLElement>, 'color'> {
   [key: string]: any;
+  /** `default`, `fade` or `none`. */
   animation?: 'default' | 'fade' | 'none' | boolean;
+  /** Content of the component. */
   children: React.ReactNode;
+  /** Your own CSS animation to show a panel. */
   showAnimation?: string;
 }
 
